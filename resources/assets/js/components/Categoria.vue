@@ -179,7 +179,6 @@
             listarCategoria (){
                 let me=this;
                 var url = 'categoria';
-
                 axios.get(url).then(function (response) {
                     me.arrayCategoria = response.data;
 
@@ -194,8 +193,8 @@
                 }
                 
                 let me = this;
-
-                axios.post('/categoria/registrar',{
+                var url = 'categoria/registrar';
+                axios.post(url,{
                     'nombre': this.nombre,
                     'descripcion': this.descripcion
                 }).then(function (response) {
@@ -237,7 +236,7 @@
                             }
                             case 'actualizar':
                             {
-                                
+                                console.log(data);
                             }
                         }
                     }

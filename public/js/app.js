@@ -33255,7 +33255,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         listarCategoria: function listarCategoria() {
             var me = this;
             var url = 'categoria';
-
             axios.get(url).then(function (response) {
                 me.arrayCategoria = response.data;
             }).catch(function (error) {
@@ -33268,8 +33267,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
 
             var me = this;
-
-            axios.post('/categoria/registrar', {
+            var url = 'categoria/registrar';
+            axios.post(url, {
                 'nombre': this.nombre,
                 'descripcion': this.descripcion
             }).then(function (response) {
@@ -33312,7 +33311,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                                     break;
                                 }
                             case 'actualizar':
-                                {}
+                                {
+                                    console.log(data);
+                                }
                         }
                     }
             }
