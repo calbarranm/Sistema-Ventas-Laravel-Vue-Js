@@ -1,11 +1,11 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\DB;
 use App\Categoria;
- 
+
 class CategoriaController extends Controller
 {
     /**
@@ -16,18 +16,18 @@ class CategoriaController extends Controller
     public function index(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
- 
+
         $buscar = $request->buscar;
         $criterio = $request->criterio;
-         
+        
         if ($buscar==''){
-            $categorias = Categoria::orderBy('id', 'asc')->paginate(10);
+            $categorias = Categoria::orderBy('id', 'desc')->paginate(3);
         }
         else{
-            $categorias = Categoria::where($criterio, 'like', '%'. $buscar . '%')->orderBy('id', 'asc')->paginate(10);
+            $categorias = Categoria::where($criterio, 'like', '%'. $buscar . '%')->orderBy('id', 'desc')->paginate(3);
         }
-         
- 
+        
+
         return [
             'pagination' => [
                 'total'        => $categorias->total(),
@@ -39,8 +39,8 @@ class CategoriaController extends Controller
             ],
             'categorias' => $categorias
         ];
-    }
- 
+    }   
+
     /**
      * Store a newly created resource in storage.
      *
@@ -56,8 +56,8 @@ class CategoriaController extends Controller
         $categoria->condicion = '1';
         $categoria->save();
     }
-   
- 
+  
+
     /**
      * Update the specified resource in storage.
      *
@@ -74,7 +74,7 @@ class CategoriaController extends Controller
         $categoria->condicion = '1';
         $categoria->save();
     }
- 
+
     public function desactivar(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
@@ -82,7 +82,7 @@ class CategoriaController extends Controller
         $categoria->condicion = '0';
         $categoria->save();
     }
- 
+
     public function activar(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
@@ -90,6 +90,6 @@ class CategoriaController extends Controller
         $categoria->condicion = '1';
         $categoria->save();
     }
- 
-     
+
+    
 }

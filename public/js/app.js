@@ -33208,6 +33208,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -33266,8 +33268,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         listarCategoria: function listarCategoria(page, buscar, criterio) {
             var me = this;
-            var ruta = 'categoria';
-            var url = ruta + '?page=' + page + '&buscar=' + buscar + '&criterio=' + criterio;
+            var url = '/categoria?page=' + page + '&buscar=' + buscar + '&criterio=' + criterio;
             axios.get(url).then(function (response) {
                 var respuesta = response.data;
                 me.arrayCategoria = respuesta.categorias.data;
@@ -33290,7 +33291,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var me = this;
 
-            axios.post('categoria/registrar', {
+            axios.post('/categoria/registrar', {
                 'nombre': this.nombre,
                 'descripcion': this.descripcion
             }).then(function (response) {
@@ -33307,7 +33308,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var me = this;
 
-            axios.put('categoria/actualizar', {
+            axios.put('/categoria/actualizar', {
                 'nombre': this.nombre,
                 'descripcion': this.descripcion,
                 'id': this.categoria_id
@@ -33337,7 +33338,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (result.value) {
                     var me = _this;
 
-                    axios.put('categoria/desactivar', {
+                    axios.put('/categoria/desactivar', {
                         'id': id
                     }).then(function (response) {
                         me.listarCategoria(1, '', 'nombre');
@@ -33369,7 +33370,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (result.value) {
                     var me = _this2;
 
-                    axios.put('categoria/activar', {
+                    axios.put('/categoria/activar', {
                         'id': id
                     }).then(function (response) {
                         me.listarCategoria(1, '', 'nombre');
@@ -33960,9 +33961,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("ol", { staticClass: "breadcrumb" }, [
+      _c("li", { staticClass: "breadcrumb-item" }, [_vm._v("Home")]),
+      _vm._v(" "),
       _c("li", { staticClass: "breadcrumb-item" }, [
-        _c("a", { attrs: { href: "/" } }, [_vm._v("Escritorio")])
-      ])
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Admin")])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "breadcrumb-item active" }, [_vm._v("Dashboard")])
     ])
   },
   function() {
