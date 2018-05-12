@@ -33229,7 +33229,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'from': 0,
                 'to': 0
             },
-            offset: 6,
+            offset: 3,
             criterio: 'nombre',
             buscar: ''
         };
