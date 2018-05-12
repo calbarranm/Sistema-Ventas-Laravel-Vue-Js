@@ -7,12 +7,7 @@ use Illuminate\Http\Request;
 use App\Categoria;
 
 class CategoriaController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+{   
     public function index(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
@@ -41,12 +36,13 @@ class CategoriaController extends Controller
         ];
     }   
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function selectCategoria(Request $request){
+        if (!$request->ajax()) return redirect('/');
+        $categorias = Categoria::where('condicion','=','1')
+        ->select('id','nombre')->orderBy('nombre','asc')->get();
+        return ['categorias' => $categorias];        
+    }
+
     public function store(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
