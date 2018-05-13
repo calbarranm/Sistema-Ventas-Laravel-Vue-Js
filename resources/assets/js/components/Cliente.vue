@@ -95,9 +95,9 @@
                                     <label class="col-md-3 form-control-label" for="text-input">Tipo Documento</label>
                                     <div class="col-md-9">
                                         <select v-model="tipo_documento" class="form-control">
-                                            <option value="DNI">RUT</option>
-                                            <option value="RUC">DNI</option>
-                                            <option value="PASS">PASAPORTE</option>
+                                            <option value="RUT">RUT</option>
+                                            <option value="DNI">DNI</option>
+                                            <option value="PASAPORTE">PASAPORTE</option>
                                         </select>                                    
                                     </div>
                                 </div>

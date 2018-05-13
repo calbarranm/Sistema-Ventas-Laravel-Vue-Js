@@ -39854,15 +39854,15 @@ var render = function() {
                             }
                           },
                           [
-                            _c("option", { attrs: { value: "DNI" } }, [
+                            _c("option", { attrs: { value: "RUT" } }, [
                               _vm._v("RUT")
                             ]),
                             _vm._v(" "),
-                            _c("option", { attrs: { value: "RUC" } }, [
+                            _c("option", { attrs: { value: "DNI" } }, [
                               _vm._v("DNI")
                             ]),
                             _vm._v(" "),
-                            _c("option", { attrs: { value: "PASS" } }, [
+                            _c("option", { attrs: { value: "PASAPORTE" } }, [
                               _vm._v("PASAPORTE")
                             ])
                           ]
