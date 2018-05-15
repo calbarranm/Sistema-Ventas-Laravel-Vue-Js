@@ -42187,7 +42187,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             persona_id: 0,
             nombre: '',
-            tipo_documento: 'DNI',
+            tipo_documento: 'RUT',
             num_documento: '',
             direccion: '',
             telefono: '',
@@ -42340,7 +42340,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.modal = 0;
             this.tituloModal = '';
             this.nombre = '';
-            this.tipo_documento = 'DNI';
+            this.tipo_documento = 'RUT';
             this.num_documento = '';
             this.direccion = '';
             this.telefono = '';
@@ -42363,7 +42363,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                                     this.modal = 1;
                                     this.tituloModal = 'Registrar Usuario';
                                     this.nombre = '';
-                                    this.tipo_documento = 'DNI';
+                                    this.tipo_documento = 'RUT';
                                     this.num_documento = '';
                                     this.direccion = '';
                                     this.telefono = '';
@@ -42915,16 +42915,16 @@ var render = function() {
                             }
                           },
                           [
+                            _c("option", { attrs: { value: "RUT" } }, [
+                              _vm._v("RUT")
+                            ]),
+                            _vm._v(" "),
                             _c("option", { attrs: { value: "DNI" } }, [
                               _vm._v("DNI")
                             ]),
                             _vm._v(" "),
-                            _c("option", { attrs: { value: "RUC" } }, [
-                              _vm._v("RUC")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "PASS" } }, [
-                              _vm._v("PASS")
+                            _c("option", { attrs: { value: "PASAPORTE" } }, [
+                              _vm._v("PASAPORTE")
                             ])
                           ]
                         )

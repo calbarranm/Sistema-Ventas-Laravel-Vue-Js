@@ -194,7 +194,7 @@
             return {
                 persona_id: 0,
                 nombre : '',
-                tipo_documento : 'DNI',
+                tipo_documento : 'RUT',
                 num_documento : '',
                 direccion : '',
                 telefono : '',
@@ -349,7 +349,7 @@
                 this.modal=0;
                 this.tituloModal='';
                 this.nombre='';
-                this.tipo_documento='DNI';
+                this.tipo_documento='RUT';
                 this.num_documento='';
                 this.direccion='';
                 this.telefono='';
@@ -371,7 +371,7 @@
                                 this.modal = 1;
                                 this.tituloModal = 'Registrar Usuario';
                                 this.nombre= '';
-                                this.tipo_documento='DNI';
+                                this.tipo_documento='RUT';
                                 this.num_documento='';
                                 this.direccion='';
                                 this.telefono='';
