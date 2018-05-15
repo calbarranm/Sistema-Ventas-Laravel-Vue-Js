@@ -1,27 +1,27 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use Illuminate\Http\Request;
 use App\Rol;
- 
+
 class RolController extends Controller
 {
     public function index(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
- 
+
         $buscar = $request->buscar;
         $criterio = $request->criterio;
-         
+        
         if ($buscar==''){
-            $roles = Rol::orderBy('id', 'desc')->paginate(3);
+            $roles = Rol::orderBy('id', 'desc')->paginate(10);
         }
         else{
-            $roles = Rol::where($criterio, 'like', '%'. $buscar . '%')->orderBy('id', 'desc')->paginate(3);
+            $roles = Rol::where($criterio, 'like', '%'. $buscar . '%')->orderBy('id', 'desc')->paginate(10);
         }
-         
- 
+        
+
         return [
             'pagination' => [
                 'total'        => $roles->total(),
@@ -33,12 +33,13 @@ class RolController extends Controller
             ],
             'roles' => $roles
         ];
-    } 
-    public function selectRol(){
-        $roles = Rol::where('condicion','=','1')
+    }
+    public function selectRol(Request $request)
+    {
+        $roles = Rol::where('condicion', '=', '1')
         ->select('id','nombre')
-        ->orderBy('nombre','asc')->get();
+        ->orderBy('nombre', 'asc')->get();
 
         return ['roles' => $roles];
-    }
+    } 
 }

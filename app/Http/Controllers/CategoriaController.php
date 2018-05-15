@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 use App\Categoria;
 
 class CategoriaController extends Controller
-{   
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
@@ -16,10 +21,10 @@ class CategoriaController extends Controller
         $criterio = $request->criterio;
         
         if ($buscar==''){
-            $categorias = Categoria::orderBy('id', 'desc')->paginate(3);
+            $categorias = Categoria::orderBy('id', 'desc')->paginate(10);
         }
         else{
-            $categorias = Categoria::where($criterio, 'like', '%'. $buscar . '%')->orderBy('id', 'desc')->paginate(3);
+            $categorias = Categoria::where($criterio, 'like', '%'. $buscar . '%')->orderBy('id', 'desc')->paginate(10);
         }
         
 
@@ -34,15 +39,21 @@ class CategoriaController extends Controller
             ],
             'categorias' => $categorias
         ];
-    }   
+    }
 
     public function selectCategoria(Request $request){
         if (!$request->ajax()) return redirect('/');
         $categorias = Categoria::where('condicion','=','1')
-        ->select('id','nombre')->orderBy('nombre','asc')->get();
-        return ['categorias' => $categorias];        
+        ->select('id','nombre')->orderBy('nombre', 'asc')->get();
+        return ['categorias' => $categorias];
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
@@ -52,7 +63,15 @@ class CategoriaController extends Controller
         $categoria->condicion = '1';
         $categoria->save();
     }
-    
+  
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request)
     {
         if (!$request->ajax()) return redirect('/');

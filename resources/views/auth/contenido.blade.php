@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Sistema Ventas Laravel Vue Js">
-  <meta name="author" content="Camilo_Albarran">
+  <meta name="author" content="calbarranm">
   <meta name="keyword" content="Sistema ventas Laravel Vue Js, Sistema compras Laravel Vue Js">
 
   <title>Sistema Ventas</title>
